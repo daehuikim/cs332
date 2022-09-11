@@ -12,6 +12,6 @@ cs332
 ```
 ---
 ### Repos
-[Summary]()
-[Assign]()
-[Project]()
+- [Summary]()
+- [Assign]()
+- [Project]()
