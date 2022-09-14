@@ -5,6 +5,7 @@ import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
+
 /**
  * This class is a test suite for the methods in object FunSets. To run
  * the test suite, you can either:
@@ -77,6 +78,9 @@ class FunSetSuite extends FunSuite {
     val s1 = singletonSet(1)
     val s2 = singletonSet(2)
     val s3 = singletonSet(3)
+    val s4 = Set(1,2,3,4)
+    val s5 = Set(5,6,7,8)
+    val s6 = Set(-5,-6,7,8)
   }
 
   /**
@@ -107,6 +111,73 @@ class FunSetSuite extends FunSuite {
       assert(contains(s, 1), "Union 1")
       assert(contains(s, 2), "Union 2")
       assert(!contains(s, 3), "Union 3")
+    }
+  }
+
+  test("intersect test") {
+    new TestSets{
+      val testset1 = intersect(s1, s4)
+      val testset2 = intersect(s2, s4)
+      val testset3 = intersect(s3, s4)
+      assert(contains(testset1, 1), "intersect 4")
+      assert(contains(testset2, 2), "intersect 5")
+      assert(contains(testset3, 3), "intersect 6")
+    }
+  }
+
+   test("diff test") {
+    new TestSets{
+      val testset1 = diff(s4,s1)
+      val testset2 = diff(s4,s2)
+      val testset3 = diff(s4,s3)
+      assert(!contains(testset1, 1), "diff 1")
+      assert(!contains(testset2, 2), "diff 2")
+      assert(!contains(testset3, 3), "diff 3")
+    }
+  }
+
+  test("filter test") {
+    new TestSets{
+      type filtertest = Int => Boolean
+      val greaterthan2: filtertest = (x:Int) => x>2
+      val testset1 = filter(s1,greaterthan2)
+      val testset2 = filter(s2,greaterthan2)
+      val testset3 = filter(s3,greaterthan2)
+      assert(!contains(testset1, 1), "filter 1")
+      assert(!contains(testset2, 2), "filter 2")
+      assert(contains(testset3, 3), "filter 3")
+    }
+  }
+
+  test("forall test") {
+    new TestSets{
+      type foralltest = Int => Boolean
+      val positive: foralltest = (x:Int) => x>0
+      val negative: foralltest = (x:Int) => x<0
+      assert(forall(s1,positive), "forall 1")
+      assert(!forall(s1,negative), "forall 2")
+      assert(forall(s4,positive), "forall 3")
+      assert(!forall(s6,positive), "forall 4")
+    }
+  }
+
+  test("exist test") {
+    new TestSets{
+      type existtest = Int => Boolean
+      val positive: existtest = (x:Int) => x>0
+      val negative: existtest = (x:Int) => x<0
+      assert(exists(s1,positive), "exist 1")
+      assert(!exists(s1,negative), "exist 2")
+      assert(exists(s4,positive), "exist 3")
+      assert(exists(s6,positive), "exist 4")
+    }
+  }
+
+  test("map test") {
+    new TestSets{
+      val s = map(s4,x=>x+10)
+      assert(contains(s,14), "map 1")
+      assert(!contains(s,4), "map 2")
     }
   }
 }
