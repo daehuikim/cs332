@@ -2,13 +2,14 @@
 ---
 ##  POSTECH [CSED332](http://pl.postech.ac.kr/~gla/cs332/)
 ---
-### Cleancode
-- [Chapter2](cleancode%20chapter2.md)
-- [Chapter3](./cleancode%20chapter3.md)
+### Repository Overview
 ---
-## Scalar Programming
-- [assignment0](./example/)
-- [assignment1](./recfun/)
-- [assignment2](./funsets/)
-
-
+```
+cs332
+ ㄴassign //assignments
+ ㄴproject //projects
+```
+---
+### Repos
+- [Assign](./cs332-assign/)
+- [Project](./cs332-projects/)

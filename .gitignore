@@ -6,3 +6,7 @@
 *.sum
 */target/
 */lib_managed/
+*/project/
+*/**/*
+!*/**/src/
+!*/**/src/** 
