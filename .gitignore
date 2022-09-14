@@ -1,0 +1,8 @@
+/.vscode/
+/.metals/
+/target.
+*.class
+*.dat
+*.sum
+*/target/
+*/lib_managed/
