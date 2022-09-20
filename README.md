@@ -4,12 +4,6 @@
 ---
 ### Repository Overview
 ---
-```
-cs332
- ㄴassign //assignments
- ㄴproject //projects
-```
----
-### Repos
-- [Assign](./cs332-assign/)
-- [Project](./cs332-projects/)
+1. [Assn1](./recfun/)
+2. [Assn2](./funsets/)
+3. [Assn3](./objsets/)
