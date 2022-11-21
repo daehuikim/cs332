@@ -10,3 +10,4 @@
 4. [Assn4](./patmat/)
 5. [Assn5](./forcomp/)
 6. [Assn6](./streams/)
+7. [Assn7](./nodescala/)
